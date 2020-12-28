@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="watch" id="clock">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+        <div class="number number1">1</div>
+        <div class="number number2">2</div>
+        <div class="number number3">3</div>
+        <div class="number number4">4</div>
+        <div class="number number5">5</div>
+        <div class="number number6">6</div>
+        <div class="number number7">7</div>
+        <div class="number number8">8</div>
+        <div class="number number9">9</div>
+        <div class="number number10">10</div>
+        <div class="number number11">11</div>
+        <div class="number number12">12</div>
+    </div>
+
+    <script>
+        setInterval(SetTime, 1000);
+
+        function SetTime() {
+            const currdate = new Date();
+
+            htime = currdate.getHours();
+            minstime = currdate.getMinutes();
+            secstime = currdate.getSeconds();
+
+            let hrs = htime * 30 + minstime / 2;
+            let mins = minstime * 6 + secstime / 10;
+            let secs = secstime * 6;
+
+            hour.style.transform = `rotate(${hrs}deg)`;
+            minute.style.transform = `rotate(${mins}deg)`;
+            second.style.transform = `rotate(${secs}deg)`;
+
+        }
+    </script>
+
+
+</body>
+
+</html>
